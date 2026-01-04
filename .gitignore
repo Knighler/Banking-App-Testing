@@ -1,0 +1,120 @@
+# ==========================
+# Java
+# ==========================
+
+# Compiled class files
+*.class
+
+# Package files
+*.jar
+*.war
+*.ear
+*.zip
+*.tar.gz
+*.rar
+
+# Build directories
+/bin/
+/out/
+/build/
+/target/
+
+# IDE - IntelliJ IDEA
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# IDE - Eclipse
+.classpath
+.project
+.settings/
+.factorypath
+
+# IDE - NetBeans
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+
+# IDE - VS Code
+.vscode/
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+
+# Log files
+*.log
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# ==========================
+# React / Node.js (banking-ui)
+# ==========================
+
+# Dependencies
+banking-ui/node_modules/
+node_modules/
+
+# Production build
+banking-ui/build/
+banking-ui/dist/
+
+# Environment variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+banking-ui/.env
+banking-ui/.env.local
+banking-ui/.env.development.local
+banking-ui/.env.test.local
+banking-ui/.env.production.local
+
+# Debug logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+banking-ui/npm-debug.log*
+banking-ui/yarn-debug.log*
+banking-ui/yarn-error.log*
+
+# Testing
+banking-ui/coverage/
+
+# Misc
+.cache/
+banking-ui/.cache/
+
+# ==========================
+# Selenium / WebDriver
+# ==========================
+
+# ChromeDriver and other drivers
+chromedriver
+chromedriver.exe
+geckodriver
+geckodriver.exe
+
+# Test reports
+test-output/
+allure-results/
+allure-report/
+
+# ==========================
+# Library folder - Keep JARs
+# ==========================
+# Note: If you want to exclude the lib folder (large JARs), uncomment below:
+# lib/
+
+# Exclude source JARs only (keep runtime JARs)
+lib/*-sources.jar
