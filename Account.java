@@ -2,15 +2,27 @@ public class Account {
 
     private double balance;
     private Status status;
+    private int creditScore;
+    private static final int CREDIT_SCORE_THRESHOLD = 600;
 
     // we didn't change the methods, only changed string statuses to enum Status
 
     public Account(double initialBalance, Status initialStatus) {
         this.balance = initialBalance;
         this.status = initialStatus;
+        this.creditScore = 700; // Default credit score
+    }
+
+    public Account(double initialBalance, Status initialStatus, int creditScore) {
+        this.balance = initialBalance;
+        this.status = initialStatus;
+        this.creditScore = creditScore;
     }
 
     public boolean deposit(double amount) {
+        // Check credit eligibility first
+        if (!isCreditEligible()) return false;
+        
         // PROPOSED FIX: add unverified check
         if (status == Status.CLOSED || status == Status.UNVERIFIED || amount <= 0) return false;
 
@@ -22,6 +34,9 @@ public class Account {
     }
 
     public boolean withdraw(double amount) {
+        // Check credit eligibility first
+        if (!isCreditEligible()) return false;
+        
         // PROPOSED FIX: add unverified check
         if (status == Status.CLOSED || status == Status.SUSPENDED || status == Status.UNVERIFIED) return false;
 
@@ -79,4 +94,20 @@ public class Account {
         return false;
     }
 
+    // Credit Score Methods
+    public int getCreditScore() {
+        return creditScore;
+    }
+
+    public void setCreditScore(int creditScore) {
+        this.creditScore = creditScore;
+    }
+
+    public boolean isCreditEligible() {
+        return creditScore >= CREDIT_SCORE_THRESHOLD;
+    }
+
+    public static int getCreditScoreThreshold() {
+        return CREDIT_SCORE_THRESHOLD;
+    }
 }
